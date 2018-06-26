@@ -1,6 +1,6 @@
 class BdcController < ApplicationController
   def bdcrate
-    require 'openssl'
+    require 'open-uri'
     doc = Nokogiri::HTML(open('https://www.abokifx.com/bdc_rate', :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE))
 
     entries = doc.css('.lagos-market-rates')
